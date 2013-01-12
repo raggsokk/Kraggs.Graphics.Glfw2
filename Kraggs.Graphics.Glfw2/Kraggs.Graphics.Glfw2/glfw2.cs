@@ -29,13 +29,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security;
 
 
 namespace Kraggs.Graphics.Glfw2
 {
-    public class glfw2
+    [DebuggerNonUserCode()]
+    public static class glfw2
     {
         internal const string GLFW_LIBRARY = "glfw.dll";
         internal const CallingConvention CALL_LIBRARY = CallingConvention.Winapi;
@@ -74,6 +76,11 @@ namespace Kraggs.Graphics.Glfw2
 
         [DllImport(GLFW_LIBRARY, EntryPoint = "glfwOpenWindowHint", CallingConvention = CALL_LIBRARY)]
         public static extern void OpenWindowHint(GlfwHintTarget target, int hint);
+
+        public static void OpenWindowHintProfile(GlfwOpenGLProfile profile)
+        {
+            OpenWindowHint(GlfwHintTarget.OpenGLProfile, (int)profile);
+        }
 
         [DllImport(GLFW_LIBRARY, EntryPoint = "glfwCloseWindow", CallingConvention = CALL_LIBRARY)]
         public static extern void CloseWindow();
