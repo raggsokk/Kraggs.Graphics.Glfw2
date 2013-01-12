@@ -43,6 +43,7 @@
     <Compile Include="Enums\GlfwHintTarget.cs" />
     <Compile Include="Enums\GlfwKeys.cs" />
     <Compile Include="Enums\GlfwMouseButton.cs" />
+    <Compile Include="Enums\GlfwOpenGLProfile.cs" />
     <Compile Include="Enums\GlfwOptions.cs" />
     <Compile Include="Enums\GlfwWindowMode.cs" />
     <Compile Include="Enums\GlfwWindowParameterName.cs" />
